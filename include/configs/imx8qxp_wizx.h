@@ -228,8 +228,8 @@
 	"loadbootscript=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
 	"bootscript=echo Running bootscript from mmc ...; " \
 		"source\0" \
-	"loadimage=ext4load ${mender_uboot_root} ${loadaddr} ${image}\0" \
-	"loadfdt=ext4load ${mender_uboot_root} ${fdt_addr} ${fdt_file}\0" \
+	"loadimage=load ${mender_uboot_root} ${loadaddr} ${image}\0" \
+	"loadfdt=load ${mender_uboot_root} ${fdt_addr} ${fdt_file}\0" \
 	"loadcntr=fatload mmc ${mmcdev}:${mmcpart} ${cntr_addr} ${cntr_file}\0" \
 	"auth_os=auth_cntr ${cntr_addr}\0" \
 	"boot_os=booti ${loadaddr} - ${fdt_addr};\0" \
