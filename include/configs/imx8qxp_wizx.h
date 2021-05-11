@@ -12,9 +12,6 @@
 
 #include "imx_env.h"
 
-#define CONFIG_CMD_EXT4
-#define CONFIG_CMD_EXT4_WRITE
-
 #ifdef CONFIG_SPL_BUILD
 
 #ifdef CONFIG_SPL_SPI_SUPPORT
@@ -214,7 +211,7 @@
 	JAILHOUSE_ENV\
 	AHAB_ENV \
 	"script=boot.scr\0" \
-	"image=Image\0" \
+	"image=boot/Image\0" \
 	"panel=NULL\0" \
 	"console=ttyLP0\0" \
 	"fdt_addr=0x83000000\0"			\
@@ -222,7 +219,7 @@
 	"cntr_addr=0x98000000\0"			\
 	"cntr_file=os_cntr_signed.bin\0" \
 	"boot_fdt=try\0" \
-	"fdt_file=fsl-imx8qxp-wizx.dtb\0" \
+	"fdt_file=boot/fsl-imx8qxp-wizx.dtb\0" \
 	"mmcdev="__stringify(CONFIG_SYS_MMC_ENV_DEV)"\0" \
 	"mmcpart=" __stringify(CONFIG_SYS_MMC_IMG_LOAD_PART) "\0" \
 	"mmcroot=" CONFIG_MMCROOT " rootwait rw\0" \
@@ -231,8 +228,8 @@
 	"loadbootscript=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
 	"bootscript=echo Running bootscript from mmc ...; " \
 		"source\0" \
-	"loadimage=fatload ${mender_uboot_root} ${loadaddr} ${image}\0" \
-	"loadfdt=fatload ${mender_uboot_root} ${fdt_addr} ${fdt_file}\0" \
+	"loadimage=ext4load ${mender_uboot_root} ${loadaddr} ${image}\0" \
+	"loadfdt=ext4load ${mender_uboot_root} ${fdt_addr} ${fdt_file}\0" \
 	"loadcntr=fatload mmc ${mmcdev}:${mmcpart} ${cntr_addr} ${cntr_file}\0" \
 	"auth_os=auth_cntr ${cntr_addr}\0" \
 	"boot_os=booti ${loadaddr} - ${fdt_addr};\0" \
