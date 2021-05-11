@@ -281,7 +281,7 @@
 				"booti; " \
 			"fi;" \
 		"fi;\0"
-
+/*
 #define CONFIG_BOOTCOMMAND \
 	   "mmc dev ${mmcdev}; if mmc rescan; then " \
 		   "if run loadbootscript; then " \
@@ -304,7 +304,16 @@
 			 "fi; " \
 		   "fi; " \
 	   "else booti ${loadaddr} - ${fdt_addr}; fi"
+*/
 
+#define CONFIG_BOOTCOMMAND \
+	"run mmcargs;" \
+	"run mender_setup;" \
+	"mmc dev ${mender_uboot_dev}; " \
+	"load ${mender_uboot_root} ${loadaddr} ${image}; " \
+	"load ${mender_uboot_root} ${fdt_addr} ${fdt_file};" \
+	"run boot_os;" \
+	"run mender_try_to_recover"
 /* Link Definitions */
 #define CONFIG_LOADADDR			0x80280000
 
