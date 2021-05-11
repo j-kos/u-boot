@@ -12,6 +12,8 @@
 
 #include "imx_env.h"
 
+#define CONFIG_CMD_EXT4
+#define CONFIG_CMD_EXT4_WRITE
 
 #ifdef CONFIG_SPL_BUILD
 
@@ -299,7 +301,7 @@
 					   "run mmcboot; " \
 					   "run mender_try_to_recover; " \
 				   "else " \
-				           "run_mender_try_to_recover; " \
+				           "run mender_try_to_recover; " \
 	                                   "run netboot; " \
 				   "fi; " \
 			 "fi; " \
