@@ -12,8 +12,6 @@
 
 #include "imx_env.h"
 
-#define CONFIG_BOOTCOUNT_LIMI
-#define CONFIG_BOOTCOUNT_ENV
 
 #ifdef CONFIG_SPL_BUILD
 
