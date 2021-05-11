@@ -12,6 +12,9 @@
 
 #include "imx_env.h"
 
+#define CONFIG_BOOTCOUNT_LIMI
+#define CONFIG_BOOTCOUNT_ENV
+
 #ifdef CONFIG_SPL_BUILD
 
 #ifdef CONFIG_SPL_SPI_SUPPORT
@@ -296,7 +299,7 @@
 				   "run mender_setup; "\
 				   "if run loadimage; then " \
 					   "run mmcboot; " \
-					   "mender_try_to_recover; " \
+					   "run mender_try_to_recover; " \
 				   "else " \
 				           "run_mender_try_to_recover; " \
 	                                   "run netboot; " \
@@ -324,7 +327,7 @@
 #define CONFIG_ENV_SPI_MAX_HZ	CONFIG_SF_DEFAULT_SPEED
 #else
 #define CONFIG_ENV_OFFSET       (64 * SZ_64K)
-#define CONFIG_SYS_MMC_ENV_PART		0	/* user area */
+//#define CONFIG_SYS_MMC_ENV_PART		0	/* user area */
 #endif
 
 #define CONFIG_SYS_MMC_IMG_LOAD_PART	1
