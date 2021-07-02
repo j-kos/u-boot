@@ -662,8 +662,7 @@ static void enable_lvds(struct display_info_t const *dev)
 	struct gpio_desc desc;
 	int ret;
 
-	/* MIPI_DSI0_EN on IOEXP 0x1a port 6, MIPI_DSI1_EN on IOEXP 0x1d port 7 */
-	ret = dm_gpio_lookup_name("gpio@1a_6", &desc);
+	ret = dm_gpio_lookup_name("gpio@20_13", &desc);
 	if (ret)
 		return;
 
