@@ -311,13 +311,12 @@
 			>;
 		};
 
-		pinctrl_i2c0_mipi_lvds1: mipi_lvds1_i2c0_grp {
+		pinctrl_i2c0_mipi_lvds0: mipi_lvds0_i2c0_grp {
 			fsl,pins = <
-				SC_P_MIPI_DSI1_I2C0_SDA_MIPI_DSI1_I2C0_SDA 0x06000020
-				SC_P_MIPI_DSI1_I2C0_SCL_MIPI_DSI1_I2C0_SCL 0x06000020
+				SC_P_MIPI_DSI0_I2C0_SCL_MIPI_DSI0_I2C0_SCL	0xc6000020
+				SC_P_MIPI_DSI0_I2C0_SDA_MIPI_DSI0_I2C0_SDA	0xc6000020
 			>;
 		};
-
 		//pinctrl_reg_1v2_peri: reg_1v2_peri_grp  {
 		//	fsl,pins = <
 		//		/* PWR_SEQ1 PIN */
