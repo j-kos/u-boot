@@ -656,7 +656,9 @@ int is_recovery_key_pressing(void)
 #endif /*CONFIG_ANDROID_RECOVERY*/
 #endif /*CONFIG_FSL_FASTBOOT*/
 
+
 #if defined(CONFIG_VIDEO_IMXDPUV1)
+/*
 static void enable_lvds(struct display_info_t const *dev)
 {
 	struct gpio_desc desc;
@@ -679,17 +681,17 @@ static void enable_lvds(struct display_info_t const *dev)
 }
 
 struct display_info_t const displays[] = {{
-	.bus	= 0, /* LVDS0 */
-	.addr	= 0, /* LVDS0 */
+	.bus	= 0, 
+	.addr	= 0, 
 	.pixfmt	= IMXDPUV1_PIX_FMT_BGRA32,
 	.detect	= NULL,
 	.enable	= enable_lvds,
 	.mode	= {
-		.name           = "IT6263", /* 720P60 */
+		.name           = "IT6263", 
 		.refresh        = 60,
 		.xres           = 1280,
 		.yres           = 720,
-		.pixclock       = 13468, /* 74250000 */
+		.pixclock       = 13468, 
 		.left_margin    = 110,
 		.right_margin   = 220,
 		.upper_margin   = 5,
@@ -700,5 +702,5 @@ struct display_info_t const displays[] = {{
 		.vmode          = FB_VMODE_NONINTERLACED
 } } };
 size_t display_count = ARRAY_SIZE(displays);
-
+*/
 #endif /* CONFIG_VIDEO_IMXDPUV1 */
