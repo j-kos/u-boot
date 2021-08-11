@@ -658,7 +658,7 @@ int is_recovery_key_pressing(void)
 
 
 #if defined(CONFIG_VIDEO_IMXDPUV1)
-/*
+
 static void enable_lvds(struct display_info_t const *dev)
 {
 	struct gpio_desc desc;
@@ -702,5 +702,5 @@ struct display_info_t const displays[] = {{
 		.vmode          = FB_VMODE_NONINTERLACED
 } } };
 size_t display_count = ARRAY_SIZE(displays);
-*/
+
 #endif /* CONFIG_VIDEO_IMXDPUV1 */
